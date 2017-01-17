@@ -154,6 +154,8 @@ nav > div {
 }
 
 @media screen and (max-width: 470px){
-
+  #title {
+    font-size: .8em;
+  }
 
 }
