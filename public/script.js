@@ -3,57 +3,57 @@ console.log('script.js connected');
 
 window.onload = () => {
 
-  const viewHeight = window.innerHeight;
   let hamburger = document.getElementById('hamburger')
   let nav = document.querySelector('nav');
-  let about = document.querySelector('#about')
   let body = document.querySelector('body');
 
-  function handleHamburgerOver() {
-    hamburger.style.height = '71px';
-    hamburger.style.width = '71px';
-  }
-
-  function handleHamburgerLeave() {
-    hamburger.style.height = '70px';
-    hamburger.style.width = '70px';
-  }
-
-  function handleNavClick() {
+  function handleHamburgerClick() {
     nav.style.display = 'block';
-    hamburger.removeEventListener('mouseover', handleHamburgerOver);
+    nav.className = 'trans';
   }
 
   function hideNav(e) {
     if (e.target !== hamburger && e.srcElement.nodeName !== "SPAN") {
       nav.style.display = 'none';
-      hamburger.addEventListener('mouseover', handleHamburgerOver);
     }
   }
 
   function handleNavScroll(e) {
-    if (e.target.innerText === 'About') {
-      document.body.scrollTop = viewHeight;
+
+    // define scroll position of each section relative to window.innerHeight
+    const viewHeight = window.innerHeight;
+    const homeHeight = 0;
+    const aboutHeight = viewHeight;
+    const projectsHeight = viewHeight * 2;
+    const contactHeight = viewHeight * 3;
+
+    // call scrollTo on the intended position
+    if (e.target.innerText === 'Home') {
+      scrollTo(homeHeight, 300);
+    } else if (e.target.innerText === 'About') {
+      scrollTo(aboutHeight, 300);
     } else if (e.target.innerText === 'Projects') {
-      document.body.scrollTop = viewHeight * 2;
+      scrollTo(projectsHeight, 300);
     } else if (e.target.innerText === 'Contact') {
-      document.body.scrollTop = viewHeight * 3;
+      scrollTo(contactHeight, 300);
     }
   }
 
-  function scrollTo(destination) {
-    // set timeout here
+  function scrollTo(target, duration) {
+    let distance = target - document.body.scrollTop;
+    let perTick = (distance/duration) * 10;
+    let scroller = setInterval( () => {
+      if (duration <= 0 || document.body.scrollTop === target) {
+        clearInterval(scroller);
+      } else {
+        duration -= 10;
+        document.body.scrollTop += perTick;
+      }
+    }, 10)
   }
 
   // add event listeners
-  hamburger.addEventListener('mouseover', handleHamburgerOver);
-  hamburger.addEventListener('mouseleave', handleHamburgerLeave);
-  hamburger.addEventListener('click', handleNavClick);
-
+  hamburger.addEventListener('click', handleHamburgerClick);
   body.addEventListener('click', hideNav);
   nav.addEventListener('click', handleNavScroll);
-
-  document.addEventListener('scroll', () => {
-    console.log(document.body.scrollTop)
-  })
-}
+};

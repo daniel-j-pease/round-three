@@ -3,8 +3,29 @@
   padding: 0;
 }
 
+/* Thanks to cssportal.com for their superb gradient tool, and to Behance for the palette! */
+body {
+  /* IE10+ */
+background-image: -ms-linear-gradient(bottom, #F8B195 0%, #F67280 50%, #C06C84 65%, #6C5B7B 80%, #355C7D 100%);
+
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(bottom, #F8B195 0%, #F67280 50%, #C06C84 65%, #6C5B7B 80%, #355C7D 100%);
+
+/* Opera */
+background-image: -o-linear-gradient(bottom, #F8B195 0%, #F67280 50%, #C06C84 65%, #6C5B7B 80%, #355C7D 100%);
+
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F8B195), color-stop(50, #F67280), color-stop(65, #C06C84), color-stop(80, #6C5B7B), color-stop(100, #355C7D));
+
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(bottom, #F8B195 0%, #F67280 50%, #C06C84 65%, #6C5B7B 80%, #355C7D 100%);
+
+/* W3C Markup */
+background-image: linear-gradient(to top, #F8B195 0%, #F67280 50%, #C06C84 65%, #6C5B7B 80%, #355C7D 100%);
+}
+
 #hamburger {
-  background-color: red;
+  background-color: #F8B195;
   border: .5px solid black;
   border-radius: 50px;
   height: 70px;
@@ -35,7 +56,7 @@ nav {
   right: 0;
   margin-right: calc(5vw + 50px);
   margin-top: calc(5vh + 55px);
-  background-color: green;
+  background-color: #F8B195;
 }
 
 nav > div {
@@ -56,13 +77,37 @@ nav > div {
 }
 
 #welcome {
-  /*background: red;*/
+  color: #F8B195;
 }
 
-#about {
-  background: grey;
+#title,
+.name {
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 0px 5px #C06C84;
 }
 
-#portfolio {
-  background: green;
+.name {
+  height: 20vh;
+  font-size: 80px;
+  width: 50vw;
+  font-family: 'Expletus Sans', cursive;
+}
+
+#first {
+  left: 20vw;
+  top: 30vh;
+}
+
+#last {
+  left: 30vw;
+  top: 41vh;
+}
+
+#title {
+  font-size: 18px;
+  top: 53vh;
+  width: 40vw;
+  left: 30vw;
+  font-family: 'Raleway', sans-serif;
 }
