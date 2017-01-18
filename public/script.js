@@ -97,15 +97,17 @@ window.onload = () => {
     barOne.style.top = `${firstBarTop}px`;
     barOne.style.left = `${firstBarLeft + 10}px`;
     barOne.style.width = `${posFirstLeft-firstBarLeft - 15}px`
+    // barOne.style.height = `.3vh`;
 
     barTwo.style.top = `${lastBarTop}px`;
     barTwo.style.width = `${posFirstRight - posLastRight - 20}px`
     barTwo.style.left = `${posFirstRight - barTwo.offsetWidth - 10}px`
+    // barTwo.style.height = `.3vh`;
 
     barThree.style.top = `${title.getBoundingClientRect().bottom + 5}px`;
     barThree.style.width = `${(title.offsetWidth/2)}px`;
-    barThree.style.height = `.3vh`;
     barThree.style.left = `${(window.innerWidth - barThree.offsetWidth)/2}px`;
+    // barThree.style.height = `.3vh`;
   }
 
   function handleSocialClick(e) {
