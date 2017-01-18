@@ -3,33 +3,13 @@
   padding: 0;
 }
 
-/* Thanks to cssportal.com for their superb gradient tool, and to Behance for the palette! */
-body {
-  /* IE10+ */
-background-image: -ms-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
-
-/* Mozilla Firefox */
-background-image: -moz-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
-
-/* Opera */
-background-image: -o-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
-
-/* Webkit (Safari/Chrome 10) */
-background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F8B195), color-stop(40, #C06C84), color-stop(75, #6C5B7B), color-stop(100, #355C7D));
-
-/* Webkit (Chrome 11+) */
-background-image: -webkit-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
-
-/* W3C Markup */
-background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
-}
-
 #hamburger {
   height: 10vh;
   width: 10vw;
   position: fixed;
   right: 0;
   margin-right: 5vw;
+  margin-top: 3vh;
 
   display: flex;
   flex-direction: column;
@@ -48,11 +28,13 @@ background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, 
 }
 
 nav {
-  /*display: none;*/
+  max-height: 0;
+  transition: max-height 0.5s ease-out 0s;
+  overflow: hidden;
   position: fixed;
   right: 0;
   margin-right: 5vw;
-  margin-top: 8vh;
+  margin-top: 11vh;
   background-color: #F8B195;
   color: #355C7D;
 }
@@ -117,6 +99,32 @@ nav > div {
   display: none;
   background-color: #F67280;
   height: .7vh;
+}
+
+.reveal {
+  max-height: 500px;
+  transition: max-height 0.5s ease-out 0s;
+}
+
+/* Thanks to cssportal.com for their superb gradient tool, and to Behance for the palette! */
+body {
+  /* IE10+ */
+background-image: -ms-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
+
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
+
+/* Opera */
+background-image: -o-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
+
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F8B195), color-stop(40, #C06C84), color-stop(75, #6C5B7B), color-stop(100, #355C7D));
+
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
+
+/* W3C Markup */
+background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
 }
 
 @media screen and (max-width: 924px){

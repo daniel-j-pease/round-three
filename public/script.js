@@ -22,11 +22,16 @@ window.onload = () => {
 
   function handleHamburgerClick() {
     nav.style.display = 'block';
+    nav.className = 'reveal';
   }
 
   function hideNav(e) {
+    console.log(e.target)
     if (e.target !== hamburger && e.srcElement.nodeName !== "SPAN") {
-      nav.style.display = 'none';
+      nav.className = '';
+    }
+    if (e.target.className === 'not') {
+      nav.className = '';
     }
   }
 
