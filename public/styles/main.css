@@ -114,12 +114,9 @@ nav > div {
 }
 
 .bar {
+  display: none;
   background-color: #F67280;
   height: .7vh;
-}
-
-.opaque {
-  opacity: 0.2;
 }
 
 @media screen and (max-width: 924px){

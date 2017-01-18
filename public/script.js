@@ -16,21 +16,18 @@ window.onload = () => {
   let posLast = document.querySelector('#positioner-last');
   let title = document.querySelector('#title');
 
+  barOne.style.display = 'block';
+  barTwo.style.display = 'block';
+  barThree.style.display = 'block';
+
   function handleHamburgerClick() {
     nav.style.display = 'block';
-    hamburger.className = 'opaque';
   }
 
   function hideNav(e) {
     if (e.target !== hamburger && e.srcElement.nodeName !== "SPAN") {
       nav.style.display = 'none';
-      hamburger.className = '';
     }
-  }
-
-  function handleNavHover(e) {
-    console.log(e.target)
-    e.target.className = '';
   }
 
   function handleNavClick(e) {
@@ -105,7 +102,6 @@ window.onload = () => {
   // add event listeners
   hamburger.addEventListener('click', handleHamburgerClick);
   body.addEventListener('click', hideNav);
-  nav.addEventListener('mouseover', handleNavHover);
   nav.addEventListener('click', handleNavClick);
   window.addEventListener('resize', moveBars)
   window.addEventListener('scroll', checkHamburger);
