@@ -3,7 +3,10 @@ console.log('script.js connected');
 
 window.onload = () => {
 
+  // capture viewHeight for use in style calculations
   const viewHeight = window.innerHeight;
+
+  //decare variables
   let hamburger = document.getElementById('hamburger')
   let nav = document.querySelector('nav');
   let body = document.querySelector('body');
@@ -14,6 +17,9 @@ window.onload = () => {
   let barThree = document.querySelector('#bar-three');
   let posFirst = document.querySelector('#positioner-first');
   let posLast = document.querySelector('#positioner-last');
+  let twitter = document.querySelector('#twitter');
+  let github = document.querySelector('#github');
+  let linkedin = document.querySelector('#linkedin');
   let title = document.querySelector('#title');
 
   barOne.style.display = 'block';
@@ -26,7 +32,6 @@ window.onload = () => {
   }
 
   function hideNav(e) {
-    console.log(e.target)
     if (e.target !== hamburger && e.srcElement.nodeName !== "SPAN") {
       nav.className = '';
     }
@@ -37,12 +42,11 @@ window.onload = () => {
 
   function handleNavClick(e) {
 
-    console.log(e.target)
     // define scroll position of each section relative to window.innerHeight
     const homeHeight = 0;
     const aboutHeight = viewHeight;
     const projectsHeight = viewHeight * 2;
-    const contactHeight = viewHeight * 3;
+    const contactHeight = viewHeight * 4;
 
     // call scrollTo on the intended position
     if (e.target.innerText === 'Home') {
@@ -70,7 +74,7 @@ window.onload = () => {
   }
 
   function checkHamburger() {
-    if (document.body.scrollTop > (viewHeight * 2)) {
+    if (document.body.scrollTop > (viewHeight * 3)) {
       hamburger.childNodes[1].style.backgroundColor = '#355C7D';
       hamburger.childNodes[3].style.backgroundColor = '#355C7D';
       hamburger.childNodes[5].style.backgroundColor = '#355C7D';
@@ -104,7 +108,20 @@ window.onload = () => {
     barThree.style.left = `${(window.innerWidth - barThree.offsetWidth)/2}px`;
   }
 
+  function handleSocialClick(e) {
+    if (e.target.id === 'twitter') {
+      window.open('https://twitter.com/cantthinkofpun', '_blank');
+    } else if (e.target.id === 'github') {
+      window.open('https://github.com/daniel-j-pease', '_blank');
+    } else {
+      window.open('https://www.linkedin.com/in/daniel-pease', '_blank');
+    }
+  }
+
   // add event listeners
+  twitter.addEventListener('click', handleSocialClick);
+  github.addEventListener('click', handleSocialClick);
+  linkedin.addEventListener('click', handleSocialClick);
   hamburger.addEventListener('click', handleHamburgerClick);
   body.addEventListener('click', hideNav);
   nav.addEventListener('click', handleNavClick);

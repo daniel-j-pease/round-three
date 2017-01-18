@@ -49,11 +49,17 @@ nav > div {
 }
 
 #welcome,
-#about,
-#portfolio,
-#contact {
-  height: 100vh;
+#about {
   width: 100vw;
+  height: 100vh;
+}
+
+#portfolio {
+  height: 200vh;
+}
+
+#contact {
+  height: 70vh;
 }
 
 #welcome {
@@ -101,11 +107,160 @@ nav > div {
   height: .7vh;
 }
 
+#about > h1 {
+  color: #F8B195;
+  position: absolute;
+  top: 120vh;
+  left: calc(20vw + 310px);
+  font-size: 2.618em;
+  font-family: 'Expletus Sans', cursive;
+}
+
+#headshot {
+  position: absolute;
+  top: 120vh;
+  left: 15vw;
+  background-color: red;
+  height: 419px;
+  width: 310px;
+}
+
+.bio {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  font-size: 1em;
+  left: calc(20vw + 310px);
+  margin-right: 5vw;
+}
+
+#bio-one {
+  top: 135vh;
+  margin-bottom: 5vh;
+}
+
+#bio-two {
+  top: 150vh;
+}
+
+.project {
+  position: absolute;
+  height: 40vh;
+  width: 55vw;
+  background-color: lightblue;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  left: 10vw;
+  border-radius: 10px;
+}
+
+#project-one {
+  top: 200vh;
+}
+
+#project-two {
+  top: 250vh;
+}
+
+#project-three {
+  top: 300vh;
+}
+
+#project-four {
+  top: 350vh;
+}
+
 .reveal {
   max-height: 500px;
   transition: max-height 0.5s ease-out 0s;
 }
 
+#contact-title {
+  top: 415vh;
+  position: absolute;
+  display: block;
+  width: 100vw;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+
+  color: #6C5B7B;
+}
+
+input,
+textarea {
+  display: block;
+  position: absolute;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+}
+
+#contact-name,
+#contact-email {
+  width: 25vw;
+  line-height: 5vh;
+  text-align: center;
+}
+
+#contact-name {
+  top: 425vh;
+  left: 22.5vw;
+}
+
+#contact-email {
+  top: 425vh;
+  left: 52.5vw;
+}
+
+#contact-message {
+  left: 20vw;
+  top: 433vh;
+  height: 15vh;
+  width: 55vw;
+  padding: 2.5vw;
+}
+
+#contact-send {
+  top: 458vh;
+  width: 15vw;
+  line-height: 5vh;
+  left: 42.5vw;
+  background-color: #355C7D;
+  color: #F8B195;
+}
+
+footer {
+  width: 100vw;
+  height: 30vh;
+  background-color: #355C7D;
+}
+
+.social {
+  position: absolute;
+  background-color: #355C7D;
+  height: 80px;
+  width: 80px;
+  top: 482.5vh;
+  background-size: 100% 100%;
+  border-radius: 50px;
+}
+
+#linkedin {
+  left: 15vw;
+  background-image: url('../assets/linkedin-grey.png');
+}
+
+#github {
+  left: 45vw;
+  background-image: url('../assets/github-closed.png');
+}
+
+#twitter {
+  left: 75vw;
+  background-image: url('../assets/twitter.png');
+
+}
 /* Thanks to cssportal.com for their superb gradient tool, and to Behance for the palette! */
 body {
   /* IE10+ */
