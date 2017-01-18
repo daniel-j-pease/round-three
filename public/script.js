@@ -18,17 +18,24 @@ window.onload = () => {
 
   function handleHamburgerClick() {
     nav.style.display = 'block';
+    hamburger.className = 'opaque';
   }
 
   function hideNav(e) {
-    console.log(e.target)
     if (e.target !== hamburger && e.srcElement.nodeName !== "SPAN") {
       nav.style.display = 'none';
+      hamburger.className = '';
     }
   }
 
-  function handleNavScroll(e) {
+  function handleNavHover(e) {
+    console.log(e.target)
+    e.target.className = '';
+  }
 
+  function handleNavClick(e) {
+
+    console.log(e.target)
     // define scroll position of each section relative to window.innerHeight
     const homeHeight = 0;
     const aboutHeight = viewHeight;
@@ -61,9 +68,7 @@ window.onload = () => {
   }
 
   function checkHamburger() {
-    console.log(viewHeight)
     if (document.body.scrollTop > (viewHeight * 2)) {
-      console.log(hamburger.childNodes)
       hamburger.childNodes[1].style.backgroundColor = '#355C7D';
       hamburger.childNodes[3].style.backgroundColor = '#355C7D';
       hamburger.childNodes[5].style.backgroundColor = '#355C7D';
@@ -75,7 +80,6 @@ window.onload = () => {
   }
 
   function moveBars() {
-    console.log('moving')
     let firstBarTop = first.getBoundingClientRect().top + (first.getBoundingClientRect().bottom - first.getBoundingClientRect().top)/3;
     let firstBarLeft = last.getBoundingClientRect().left;
     let lastBarTop = last.getBoundingClientRect().top + (last.getBoundingClientRect().bottom - last.getBoundingClientRect().top)/2;
@@ -101,7 +105,8 @@ window.onload = () => {
   // add event listeners
   hamburger.addEventListener('click', handleHamburgerClick);
   body.addEventListener('click', hideNav);
-  nav.addEventListener('click', handleNavScroll);
+  nav.addEventListener('mouseover', handleNavHover);
+  nav.addEventListener('click', handleNavClick);
   window.addEventListener('resize', moveBars)
   window.addEventListener('scroll', checkHamburger);
 
