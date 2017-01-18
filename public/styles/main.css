@@ -30,7 +30,6 @@ background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, 
   position: fixed;
   right: 0;
   margin-right: 5vw;
-  margin-top: 5vh;
 
   display: flex;
   flex-direction: column;
@@ -49,22 +48,22 @@ background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, 
 }
 
 nav {
-  display: none;
+  /*display: none;*/
   position: fixed;
   right: 0;
-  margin-right: calc(5vw + 45px);
-  margin-top: calc(5vh + 55px);
+  margin-right: 5vw;
+  margin-top: 8vh;
   background-color: #F8B195;
   color: #355C7D;
 }
 
 nav > div {
   line-height: 35px;
-  padding-left: 10px;
-  font-size: 18px;
+  text-align: center;
+  font-size: 1em;
   outline: 1px solid #6C5B7B;
   outline-offset: -1px;
-  width: 85px;
+  width: 10vw;
 }
 
 #welcome,
@@ -115,6 +114,7 @@ nav > div {
 }
 
 .bar {
+  display: none;
   background-color: #F67280;
   height: .7vh;
 }
@@ -151,11 +151,14 @@ nav > div {
   .bar {
     height: .3vh;
   }
+
+  nav > div {
+    width: 70px;
+  }
 }
 
 @media screen and (max-width: 470px){
   #title {
     font-size: .8em;
   }
-
 }
