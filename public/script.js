@@ -1,26 +1,23 @@
-'use strict';
-console.log('script.js connected');
-
+/* eslint no-undef: 0 */
 window.onload = () => {
-
   // capture viewHeight for use in style calculations
   const viewHeight = window.innerHeight;
 
-  //decare variables
-  let hamburger = document.getElementById('hamburger')
-  let nav = document.querySelector('nav');
-  let body = document.querySelector('body');
-  let first = document.querySelector('#first');
-  let last = document.querySelector('#last');
-  let barOne = document.querySelector('#bar-one');
-  let barTwo = document.querySelector('#bar-two');
-  let barThree = document.querySelector('#bar-three');
-  let posFirst = document.querySelector('#positioner-first');
-  let posLast = document.querySelector('#positioner-last');
-  let twitter = document.querySelector('#twitter');
-  let github = document.querySelector('#github');
-  let linkedin = document.querySelector('#linkedin');
-  let title = document.querySelector('#title');
+  // decare variables
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.querySelector('nav');
+  const body = document.querySelector('body');
+  const first = document.querySelector('#first');
+  const last = document.querySelector('#last');
+  const barOne = document.querySelector('#bar-one');
+  const barTwo = document.querySelector('#bar-two');
+  const barThree = document.querySelector('#bar-three');
+  const posFirst = document.querySelector('#positioner-first');
+  const posLast = document.querySelector('#positioner-last');
+  const twitter = document.querySelector('#twitter');
+  const github = document.querySelector('#github');
+  const linkedin = document.querySelector('#linkedin');
+  const title = document.querySelector('#title');
 
   barOne.style.display = 'block';
   barTwo.style.display = 'block';
@@ -32,7 +29,7 @@ window.onload = () => {
   }
 
   function hideNav(e) {
-    if (e.target !== hamburger && e.srcElement.nodeName !== "SPAN") {
+    if (e.target !== hamburger && e.srcElement.nodeName !== 'SPAN') {
       nav.className = '';
     }
     if (e.target.className === 'not') {
@@ -40,8 +37,20 @@ window.onload = () => {
     }
   }
 
-  function handleNavClick(e) {
+  function scrollTo(target, duration) {
+    const distance = target - document.body.scrollTop;
+    const perTick = (distance / duration) * 10;
+    const scroller = setInterval(() => {
+      if (duration <= 0 || document.body.scrollTop === target) {
+        clearInterval(scroller);
+      } else {
+        duration -= 10;
+        document.body.scrollTop += perTick;
+      }
+    }, 10);
+  }
 
+  function handleNavClick(e) {
     // define scroll position of each section relative to window.innerHeight
     const homeHeight = 0;
     const aboutHeight = viewHeight;
@@ -60,19 +69,6 @@ window.onload = () => {
     }
   }
 
-  function scrollTo(target, duration) {
-    let distance = target - document.body.scrollTop;
-    let perTick = (distance/duration) * 10;
-    let scroller = setInterval( () => {
-      if (duration <= 0 || document.body.scrollTop === target) {
-        clearInterval(scroller);
-      } else {
-        duration -= 10;
-        document.body.scrollTop += perTick;
-      }
-    }, 10)
-  }
-
   function checkHamburger() {
     if (document.body.scrollTop > (viewHeight * 3)) {
       hamburger.childNodes[1].style.backgroundColor = '#355C7D';
@@ -86,27 +82,27 @@ window.onload = () => {
   }
 
   function moveBars() {
-    let firstBarTop = first.getBoundingClientRect().top + (first.getBoundingClientRect().bottom - first.getBoundingClientRect().top)/3;
-    let firstBarLeft = last.getBoundingClientRect().left;
-    let lastBarTop = last.getBoundingClientRect().top + (last.getBoundingClientRect().bottom - last.getBoundingClientRect().top)/2;
+    const firstBarTop = first.getBoundingClientRect().top + (first.getBoundingClientRect().bottom - first.getBoundingClientRect().top) / 3;
+    const firstBarLeft = last.getBoundingClientRect().left;
+    const lastBarTop = last.getBoundingClientRect().top + (last.getBoundingClientRect().bottom - last.getBoundingClientRect().top) / 2;
 
-    let posFirstRight = posFirst.getBoundingClientRect().right;
-    let posFirstLeft = posFirst.getBoundingClientRect().left;
-    let posLastRight = posLast.getBoundingClientRect().right;
+    const posFirstRight = posFirst.getBoundingClientRect().right;
+    const posFirstLeft = posFirst.getBoundingClientRect().left;
+    const posLastRight = posLast.getBoundingClientRect().right;
 
     barOne.style.top = `${firstBarTop}px`;
     barOne.style.left = `${firstBarLeft + 10}px`;
-    barOne.style.width = `${posFirstLeft-firstBarLeft - 15}px`
+    barOne.style.width = `${posFirstLeft - firstBarLeft - 15}px`;
     // barOne.style.height = `.3vh`;
 
     barTwo.style.top = `${lastBarTop}px`;
-    barTwo.style.width = `${posFirstRight - posLastRight - 20}px`
-    barTwo.style.left = `${posFirstRight - barTwo.offsetWidth - 10}px`
+    barTwo.style.width = `${posFirstRight - posLastRight - 20}px`;
+    barTwo.style.left = `${posFirstRight - barTwo.offsetWidth - 10}px`;
     // barTwo.style.height = `.3vh`;
 
     barThree.style.top = `${title.getBoundingClientRect().bottom + 5}px`;
-    barThree.style.width = `${(title.offsetWidth/2)}px`;
-    barThree.style.left = `${(window.innerWidth - barThree.offsetWidth)/2}px`;
+    barThree.style.width = `${(title.offsetWidth / 2)}px`;
+    barThree.style.left = `${(window.innerWidth - barThree.offsetWidth) / 2}px`;
     // barThree.style.height = `.3vh`;
   }
 
@@ -127,7 +123,7 @@ window.onload = () => {
   hamburger.addEventListener('click', handleHamburgerClick);
   body.addEventListener('click', hideNav);
   nav.addEventListener('click', handleNavClick);
-  window.addEventListener('resize', moveBars)
+  window.addEventListener('resize', moveBars);
   window.addEventListener('scroll', checkHamburger);
 
   moveBars();
