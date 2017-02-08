@@ -28,7 +28,7 @@
   background-color: #F8B195;
 }
 
-nav{
+nav {
   max-height: 0;
   transition: max-height 0.5s ease-out 0s;
   overflow: hidden;
@@ -157,11 +157,11 @@ nav > div {
 .project-image {
   position: absolute;
   height: 40vh;
-  width: 55vw;
+  width: 70vw;
   background-color: lightblue;
   margin-bottom: 5vh;
   margin-top: 5vh;
-  left: 10vw;
+  left: 15vw;
   border-radius: 10px;
 }
 
@@ -181,10 +181,15 @@ nav > div {
   top: 350vh;
 }
 
-ul {
+.hidden {
+  display: none;
+}
+
+.project-list {
   position: absolute;
-  width: 20vw;
-  left: 70vw;
+  width: 40vw;
+  left: 30vw;
+  font-size: 1.618em;
 }
 
 #project-one-list,

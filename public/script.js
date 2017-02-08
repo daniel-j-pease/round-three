@@ -18,6 +18,15 @@ window.onload = () => {
   const github = document.querySelector('#github');
   const linkedin = document.querySelector('#linkedin');
   const title = document.querySelector('#title');
+  const projectOne = document.querySelector('#project-one-image');
+  const projectTwo = document.querySelector('#project-two-image');
+  const projectThree = document.querySelector('#project-three-image');
+  const projectOneList = document.querySelector('#project-one-list');
+  const projectTwoList = document.querySelector('#project-two-list');
+  const projectThreeList = document.querySelector('#project-three-list');
+  const portfolio = document.querySelector('#portfolio');
+
+  const projectOneContainer = document.querySelector('#project-one-container');
 
   barOne.style.display = 'block';
   barTwo.style.display = 'block';
@@ -93,17 +102,14 @@ window.onload = () => {
     barOne.style.top = `${firstBarTop}px`;
     barOne.style.left = `${firstBarLeft + 10}px`;
     barOne.style.width = `${posFirstLeft - firstBarLeft - 15}px`;
-    // barOne.style.height = `.3vh`;
 
     barTwo.style.top = `${lastBarTop}px`;
     barTwo.style.width = `${posFirstRight - posLastRight - 20}px`;
     barTwo.style.left = `${posFirstRight - barTwo.offsetWidth - 10}px`;
-    // barTwo.style.height = `.3vh`;
 
     barThree.style.top = `${title.getBoundingClientRect().bottom + 5}px`;
     barThree.style.width = `${(title.offsetWidth / 2)}px`;
     barThree.style.left = `${(window.innerWidth - barThree.offsetWidth) / 2}px`;
-    // barThree.style.height = `.3vh`;
   }
 
   function handleSocialClick(e) {
@@ -116,15 +122,45 @@ window.onload = () => {
     }
   }
 
+  function handleProjectHover(e) {
+    console.log(e.target.nextElementSibling)
+    portfolio.addEventListener('mouseover', hideProjects);
+    e.target.nextElementSibling.setAttribute('class', 'project-list');
+  }
+
+  function handleProjectLeave(e) {
+    console.log(e.srcElement)
+    if (e.srcElement === 'LI') {
+      console.log(e, 'its LI')
+    }
+  }
+
+  function hideProjects(e) {
+    if (e.srcElement.nodeName === 'LI') {
+      // console.log('its li')
+    } else if (e.srcElement.nodeName === 'IMG') {
+      // console.log('its img')
+    } else if (e.srcElement.nodeName === 'DIV') {
+      // console.log('its div')
+    }
+    // projectOneList.setAttribute('class', 'hidden');
+    // projectTwoList.setAttribute('class', 'hidden');
+    // projectThreeList.setAttribute('class', 'hidden');
+  }
+
   // add event listeners
+  hamburger.addEventListener('click', handleHamburgerClick);
+  nav.addEventListener('click', handleNavClick);
+  body.addEventListener('click', hideNav);
+  projectOne.addEventListener('mouseenter', handleProjectHover);
+  projectOne.addEventListener('mouseleave', handleProjectLeave);
+  // projectThree.addEventListener('mouseenter', handleProjectHover);
   twitter.addEventListener('click', handleSocialClick);
   github.addEventListener('click', handleSocialClick);
   linkedin.addEventListener('click', handleSocialClick);
-  hamburger.addEventListener('click', handleHamburgerClick);
-  body.addEventListener('click', hideNav);
-  nav.addEventListener('click', handleNavClick);
   window.addEventListener('resize', moveBars);
   window.addEventListener('scroll', checkHamburger);
+
 
   moveBars();
 };
