@@ -8,7 +8,7 @@
   width: 10vw;
   position: fixed;
   right: 0;
-  margin-right: 5vw;
+  margin-right: 3vw;
   margin-top: 3vh;
   z-index: 1;
 
@@ -112,7 +112,7 @@ nav > div {
 #about > h1 {
   color: #F8B195;
   position: absolute;
-  top: 120vh;
+  top: 110vh;
   left: calc(20vw + 310px);
   font-size: 2.618em;
   font-family: 'Expletus Sans', cursive;
@@ -120,7 +120,7 @@ nav > div {
 
 #headshot {
   position: absolute;
-  top: 120vh;
+  top: 110vh;
   left: 15vw;
   background-color: red;
   height: 419px;
@@ -136,39 +136,76 @@ nav > div {
 }
 
 #bio-one {
-  top: 135vh;
+  top: 125vh;
   margin-bottom: 5vh;
 }
 
 #bio-two {
-  top: 150vh;
+  top: 140vh;
 }
 
-.project {
+#portfolio > h1 {
+  position: absolute;
+  top: 190vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 2.618em;
+  color: #F8B195;
+  font-family: 'Expletus Sans', cursive;
+}
+
+.project-container {
   position: absolute;
   height: 40vh;
-  width: 55vw;
-  background-color: lightblue;
-  margin-bottom: 5vh;
+  width: 70vw;
+  margin-bottom: 10vh;
   margin-top: 5vh;
-  left: 10vw;
+  left: 15vw;
+}
+
+.project-image {
+  position: absolute;
+  height: 40vh;
+  width: 70vw;
   border-radius: 10px;
 }
 
-#project-one {
+#project-one-container {
   top: 200vh;
 }
 
-#project-two {
+
+#project-two-container {
   top: 250vh;
 }
 
-#project-three {
+#project-three-container {
   top: 300vh;
 }
 
-#project-four {
+#project-four-container {
   top: 350vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.project-list {
+  position: absolute;
+  width: 40vw;
+  left: 30vw;
+  font-size: 1.618em;
+}
+
+#project-one-list,
+#project-two-list {
+  color: #F8B195;
+}
+
+#project-three-list,
+#project-four-list {
+  color: #355C7D;
 }
 
 .reveal {
