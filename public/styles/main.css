@@ -154,30 +154,36 @@ nav > div {
   font-family: 'Expletus Sans', cursive;
 }
 
+.project-container {
+  position: absolute;
+  height: 40vh;
+  width: 70vw;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  left: 15vw;
+}
+
 .project-image {
   position: absolute;
   height: 40vh;
   width: 70vw;
-  background-color: lightblue;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-  left: 15vw;
   border-radius: 10px;
 }
 
-#project-one-image {
+#project-one-container {
   top: 200vh;
 }
 
-#project-two-image {
+
+#project-two-container {
   top: 250vh;
 }
 
-#project-three-image {
+#project-three-container {
   top: 300vh;
 }
 
-#project-four-image {
+#project-four-container {
   top: 350vh;
 }
 
@@ -200,18 +206,6 @@ nav > div {
 #project-three-list,
 #project-four-list {
   color: #355C7D;
-}
-
-#project-one-list {
-  top: 210vh;
-}
-
-#project-two-list {
-  top: 260vh;
-}
-
-#project-three-list {
-  top: 310vh;
 }
 
 .reveal {

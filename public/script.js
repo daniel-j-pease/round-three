@@ -18,13 +18,9 @@ window.onload = () => {
   const github = document.querySelector('#github');
   const linkedin = document.querySelector('#linkedin');
   const title = document.querySelector('#title');
-  const projectOne = document.querySelector('#project-one-image');
-  const projectTwo = document.querySelector('#project-two-image');
-  const projectThree = document.querySelector('#project-three-image');
-  const projectOneList = document.querySelector('#project-one-list');
-  const projectTwoList = document.querySelector('#project-two-list');
-  const projectThreeList = document.querySelector('#project-three-list');
-  const portfolio = document.querySelector('#portfolio');
+  const projectOne = document.querySelector('#project-one-container');
+  const projectTwo = document.querySelector('#project-two-container');
+  const projectThree = document.querySelector('#project-three-container');
 
   const projectOneContainer = document.querySelector('#project-one-container');
 
@@ -123,29 +119,14 @@ window.onload = () => {
   }
 
   function handleProjectHover(e) {
-    console.log(e.target.nextElementSibling)
-    portfolio.addEventListener('mouseover', hideProjects);
-    e.target.nextElementSibling.setAttribute('class', 'project-list');
+    console.log('hovering');
+    e.target.childNodes[3].setAttribute('class', 'project-list');
+
   }
 
   function handleProjectLeave(e) {
-    console.log(e.srcElement)
-    if (e.srcElement === 'LI') {
-      console.log(e, 'its LI')
-    }
-  }
-
-  function hideProjects(e) {
-    if (e.srcElement.nodeName === 'LI') {
-      // console.log('its li')
-    } else if (e.srcElement.nodeName === 'IMG') {
-      // console.log('its img')
-    } else if (e.srcElement.nodeName === 'DIV') {
-      // console.log('its div')
-    }
-    // projectOneList.setAttribute('class', 'hidden');
-    // projectTwoList.setAttribute('class', 'hidden');
-    // projectThreeList.setAttribute('class', 'hidden');
+    console.log('leaving');
+    e.target.childNodes[3].setAttribute('class', 'project-list hidden');
   }
 
   // add event listeners
@@ -154,13 +135,15 @@ window.onload = () => {
   body.addEventListener('click', hideNav);
   projectOne.addEventListener('mouseenter', handleProjectHover);
   projectOne.addEventListener('mouseleave', handleProjectLeave);
-  // projectThree.addEventListener('mouseenter', handleProjectHover);
+  projectTwo.addEventListener('mouseenter', handleProjectHover);
+  projectTwo.addEventListener('mouseleave', handleProjectLeave);
+  projectThree.addEventListener('mouseenter', handleProjectHover);
+  projectThree.addEventListener('mouseleave', handleProjectLeave);
   twitter.addEventListener('click', handleSocialClick);
   github.addEventListener('click', handleSocialClick);
   linkedin.addEventListener('click', handleSocialClick);
   window.addEventListener('resize', moveBars);
   window.addEventListener('scroll', checkHamburger);
-
 
   moveBars();
 };
