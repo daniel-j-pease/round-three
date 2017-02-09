@@ -170,8 +170,23 @@ nav > div {
   border-radius: 10px;
 }
 
+ul {
+  opacity: 0;
+  transition: opacity 5s ease-in;
+}
+
+img {
+  opacity: 1;
+  transition: opacity 5s ease-out;
+}
+
+img:hover {
+  opacity: .2;
+}
+
 #project-one-container {
   top: 200vh;
+  background-image: url('../assets/bustleboy-SS.png');
 }
 
 
@@ -185,10 +200,6 @@ nav > div {
 
 #project-four-container {
   top: 350vh;
-}
-
-.hidden {
-  display: none;
 }
 
 .project-list {
@@ -211,6 +222,10 @@ nav > div {
 .reveal {
   max-height: 500px;
   transition: max-height 0.5s ease-out 0s;
+}
+
+.hidden {
+  display: none;
 }
 
 #contact-title {
