@@ -1,0 +1,18 @@
+-- add to bio
+-- add a headshot
+-- finish php
+-- responsive, finish mobile stuff (tap instead of hover, etc)
+-- make bars do stuff, add bars (project header, contact header, etc), make bars locked
+-- finish and style project blurbs
+-- change up color scheme?
+
+media ranges -
+
+1: desktop
+  everything over 1024
+
+2: tablet
+  between 1023 and 415vh
+
+3: phone
+  between 414 and 300 (smaller not supported)

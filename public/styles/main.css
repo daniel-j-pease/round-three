@@ -112,7 +112,7 @@ nav > div {
 #about > h1 {
   color: #F8B195;
   position: absolute;
-  top: 110vh;
+  top: 100vh;
   left: calc(20vw + 310px);
   font-size: 2.618em;
   font-family: 'Expletus Sans', cursive;
@@ -120,28 +120,21 @@ nav > div {
 
 #headshot {
   position: absolute;
-  top: 110vh;
+  top: 100vh;
   left: 15vw;
   background-color: red;
   height: 419px;
   width: 310px;
 }
 
-.bio {
+#bio {
   font-family: 'Raleway', sans-serif;
   position: absolute;
   font-size: 1em;
   left: calc(20vw + 310px);
-  margin-right: 5vw;
-}
-
-#bio-one {
-  top: 125vh;
+  margin-right: 11vw;
+  top: 115vh;
   margin-bottom: 5vh;
-}
-
-#bio-two {
-  top: 140vh;
 }
 
 #portfolio > h1 {
@@ -334,23 +327,39 @@ background-image: -webkit-linear-gradient(bottom, #F8B195 0%, #C06C84 40%, #6C5B
 background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, #355C7D 100%);
 }
 
-@media screen and (max-width: 924px){
+@media screen and (max-width: 1024px){
   .name {
-    font-size: 4.236em;
+    font-size: 6.854em;
+    color: red;
   }
 
   #title {
     top: 51vh;
-    font-size: 1em;
+    font-size: 1.618em;
   }
 
   #first {
     top: 33vh;
   }
+
+  #about > h1 {
+    text-align: center;
+    width: 100vw;
+    left: 0;
+    font-size: 4.236em;
+  }
+
+  #headshot {
+    left: calc(50vw - 155px);
+    top: 113vh;
+    width: 40vw;
+    height: 50vw;
+  }
 }
 
-@media screen and (max-width: 593px){
+@media screen and (max-width: 414px){
   .name {
+    color: green;
     font-size: 2.618em;
   }
 

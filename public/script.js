@@ -24,6 +24,13 @@ window.onload = () => {
 
   const projectOneContainer = document.querySelector("#project-one-container");
 
+
+  // define scroll position of each section relative to window.innerHeight
+  const homeHeight = 0;
+  const aboutHeight = viewHeight - (viewHeight / 6);
+  const projectsHeight = (viewHeight * 2) - (viewHeight / 10);
+  const contactHeight = viewHeight * 4;
+
   barOne.style.display = "block";
   barTwo.style.display = "block";
   barThree.style.display = "block";
@@ -59,11 +66,6 @@ window.onload = () => {
   }
 
   function handleNavClick(e) {
-    // define scroll position of each section relative to window.innerHeight
-    const homeHeight = 0;
-    const aboutHeight = viewHeight - viewHeight / 10;
-    const projectsHeight = viewHeight * 2 - viewHeight / 10;
-    const contactHeight = viewHeight * 4;
 
     // call scrollTo on the intended position
     if (e.target.innerText === "Home") {
