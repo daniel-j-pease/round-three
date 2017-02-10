@@ -16,3 +16,13 @@ media ranges -
 
 3: phone
   between 414 and 300 (smaller not supported)
+
+colors (dark to light)
+  
+  #0B0A12
+  #10293C
+  #274952
+  #575D5B
+  #7C7760
+  #A88569
+  #C7A78E

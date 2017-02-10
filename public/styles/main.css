@@ -147,25 +147,24 @@ nav > div {
   font-family: 'Expletus Sans', cursive;
 }
 
-.project-container {
-  position: absolute;
-  height: 40vh;
-  width: 70vw;
-  margin-bottom: 10vh;
-  margin-top: 5vh;
-  left: 15vw;
+#mobile-clue {
+  display: none;
 }
 
 .project-image {
   position: absolute;
   height: 40vh;
   width: 70vw;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  left: 15vw;
   border-radius: 10px;
 }
 
 ul {
   opacity: 0;
   transition: opacity 5s ease-in;
+  padding-top: 10vh;
 }
 
 img {
@@ -177,20 +176,21 @@ img:hover {
   opacity: .2;
 }
 
-#project-one-container {
+#project-one-image {
   top: 200vh;
 }
 
-
-#project-two-container {
+#project-two-image,
+#project-two-list {
   top: 250vh;
 }
 
-#project-three-container {
+#project-three-image,
+#project-three-list {
   top: 300vh;
 }
 
-#project-four-container {
+#project-four-image {
   top: 350vh;
 }
 
@@ -214,10 +214,6 @@ img:hover {
 .reveal {
   max-height: 500px;
   transition: max-height 0.5s ease-out 0s;
-}
-
-.hidden {
-  display: none;
 }
 
 #contact-title {
@@ -346,14 +342,61 @@ background-image: linear-gradient(to top, #F8B195 0%, #C06C84 40%, #6C5B7B 75%, 
     text-align: center;
     width: 100vw;
     left: 0;
+    top: calc(107vh + 410px);
     font-size: 4.236em;
   }
 
   #headshot {
-    left: calc(50vw - 155px);
-    top: 113vh;
-    width: 40vw;
-    height: 50vw;
+    left: calc(50vw - 205px);
+    top: 100vh;
+    width: 410px;
+    height: 512px;
+  }
+
+  #bio {
+    width: 50vw;
+    top: 148vh;
+    left: 25vw;
+    margin-right: 0;
+    margin-bottom: 0;
+    font-size: 1.618em;
+  }
+
+  #portfolio > h1 {
+    font-size: 4.236em;
+    width: 100vw;
+    top: 190vh;
+  }
+
+  #mobile-clue {
+    width: 100vw;
+    font-size: 1.618em;
+    text-align: center;
+    display: block;
+  }
+
+  .project-list {
+    width: 45vw;
+    left: 27.5vw;
+    padding-top: 0;
+    background-color: red;
+    opacity: 1;
+  }
+
+  #project-one-list {
+    top: 215vh;
+  }
+
+  #project-two-list {
+    top: 265vh;
+  }
+
+  #project-three-list {
+    top: 315vh;
+  }
+
+  li {
+    padding: 1vh;
   }
 }
 

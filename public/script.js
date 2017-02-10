@@ -27,7 +27,7 @@ window.onload = () => {
 
   // define scroll position of each section relative to window.innerHeight
   const homeHeight = 0;
-  const aboutHeight = viewHeight - (viewHeight / 6);
+  const aboutHeight = viewHeight - (viewHeight / 7);
   const projectsHeight = (viewHeight * 2) - (viewHeight / 10);
   const contactHeight = viewHeight * 4;
 
